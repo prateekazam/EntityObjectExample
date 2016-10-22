@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/EmployeePgae.jsf" usageId="view_EmployeePgaePageDef"/>
+    <page path="/SelectedEmployee.jsf" usageId="view_SelectedEmployeePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_EmployeePgaePageDef" path="view.pageDefs.EmployeePgaePageDef"/>
+    <page id="view_SelectedEmployeePageDef" path="view.pageDefs.SelectedEmployeePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="EmployeeAMDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="EmployeeAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeeAM"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+  ComponentClass="model.EmployeeAMImpl"
+  ComponentInterface="model.common.EmployeeAM">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.EmployeeAM_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="EmployeeVO"
+    ViewObjectName="model.EmployeeVO"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="getEmployees"
+      MethodName="getEmployees">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="numberOfEmployee"
+        Type="int"/>
+    </Method>
+  </ClientInterface>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</AppModule>

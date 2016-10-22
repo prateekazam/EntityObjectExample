@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">EmployeePgae</property>
+      <property
+         name="x">435.69336</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>EmployeePgae&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">260.79883</property>
+      <property
+         name="page">/EmployeePgae.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">SelectedEmployee</property>
+      <property
+         name="x">644.0303</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SelectedEmployee&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">266.09766</property>
+      <property
+         name="page">/SelectedEmployee.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">selectedEmployee</property>
+      <property
+         name="sdm:polyPoints">R50,476.69336,260.44824,603.0303,265.74707,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">L54,602.8835,269.24707,476.69336,263.94824,R54</property>
+   </ControlFlowCase>
+</SDM>

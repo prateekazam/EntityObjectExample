@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeeVO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  RowClass="model.EmployeeVORowImpl"
+  ComponentClass="model.EmployeeVOImpl">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.EmployeeVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="EmployeeEO"
+    Entity="model.EmployeeEO"/>
+  <ViewAttribute
+    Name="Address"
+    IsSelected="false"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="Address"
+    EntityUsage="EmployeeEO"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="EmployeeEO"
+    AliasName="$none$"/>
+  <ViewAttribute
+    Name="EmployeeName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeName"
+    EntityUsage="EmployeeEO"
+    AliasName="$none$"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

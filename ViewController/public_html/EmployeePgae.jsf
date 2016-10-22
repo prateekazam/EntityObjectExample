@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="EmployeePgae.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl2">
+                <af:gridRow height="100px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelFormLayout id="pfl1">
+                            <f:facet name="footer">
+                                <af:panelGroupLayout id="pgl3" layout="horizontal">
+                                    <af:button text="Get Employee" id="b1"
+                                               actionListener="#{backingBeanScope.EmployeeBackingBean.clickAction}"/>
+                                    <af:button text="Selected Employee" id="b2" action="selectedEmployee"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <af:inputText label="Total Number of Employee" id="it1"
+                                          value="#{backingBeanScope.EmployeeBackingBean.numberEmployee}"/>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <af:decorativeBox theme="dark" id="db2">
+                            <f:facet name="center">
+                                <af:decorativeBox theme="medium" id="db1">
+                                    <f:facet name="center">
+                                        <af:panelGroupLayout layout="scroll" id="pgl1"
+                                                             binding="#{backingBeanScope.EmployeeBackingBean.panelGroupBinding}">
+                                            <!-- Content -->
+                                            <af:table value="#{bindings.EmployeeVO.collectionModel}" var="row"
+                                                      rows="#{bindings.EmployeeVO.rangeSize}"
+                                                      emptyText="#{bindings.EmployeeVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.EmployeeVO.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.EmployeeVO.collectionModel.makeCurrent}"
+                                                      rowSelection="single" fetchSize="#{bindings.EmployeeVO.rangeSize}"
+                                                      id="t1" columnStretching="multiple">
+                                                <af:column headerText="#{bindings.EmployeeVO.hints.EmployeeId.label}"
+                                                           id="c1">
+                                                    <af:outputText value="#{row.EmployeeId}"
+                                                                   shortDesc="#{bindings.EmployeeVO.hints.EmployeeId.tooltip}"
+                                                                   id="ot1">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.EmployeeVO.hints.EmployeeId.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column headerText="#{bindings.EmployeeVO.hints.EmployeeName.label}"
+                                                           id="c2">
+                                                    <af:outputText value="#{row.EmployeeName}"
+                                                                   shortDesc="#{bindings.EmployeeVO.hints.EmployeeName.tooltip}"
+                                                                   id="ot2"/>
+                                                </af:column>
+                                                <af:column headerText="#{bindings.EmployeeVO.hints.Address.label}"
+                                                           id="c3">
+                                                    <af:outputText value="#{row.Address}"
+                                                                   shortDesc="#{bindings.EmployeeVO.hints.Address.tooltip}"
+                                                                   id="ot3"/>
+                                                </af:column>
+                                            </af:table>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                </af:decorativeBox>
+                            </f:facet>
+                        </af:decorativeBox>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

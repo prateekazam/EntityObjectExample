@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="EmployeePgae">
+    <page>/EmployeePgae.jsf</page>
+  </view>
+  <view id="SelectedEmployee">
+    <page>/SelectedEmployee.jsf</page>
+  </view>
+  <control-flow-rule id="__2">
+    <from-activity-id>EmployeePgae</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome>selectedEmployee</from-outcome>
+      <to-activity-id>SelectedEmployee</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__4">
+    <from-activity-id>SelectedEmployee</from-activity-id>
+    <control-flow-case id="__5">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>EmployeePgae</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>EmployeeBackingBean</managed-bean-name>
+    <managed-bean-class>view.beans.EmployeeBackingBean</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+</adfc-config>
