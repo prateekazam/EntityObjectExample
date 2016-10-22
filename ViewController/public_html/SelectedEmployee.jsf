@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="SelectedEmployee.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="scroll" id="pgl1">
+                <af:panelFormLayout id="pfl1">
+                    <af:inputText value="#{bindings.Address.inputValue}" label="#{bindings.Address.hints.label}"
+                                  required="#{bindings.Address.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.Address.hints.displayWidth}"
+                                  maximumLength="#{bindings.Address.hints.precision}"
+                                  shortDesc="#{bindings.Address.hints.tooltip}" id="it1">
+                        <f:validator binding="#{bindings.Address.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.EmployeeId.inputValue}" label="#{bindings.EmployeeId.hints.label}"
+                                  required="#{bindings.EmployeeId.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.EmployeeId.hints.displayWidth}"
+                                  maximumLength="#{bindings.EmployeeId.hints.precision}"
+                                  shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it2">
+                        <f:validator binding="#{bindings.EmployeeId.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.EmployeeName.inputValue}"
+                                  label="#{bindings.EmployeeName.hints.label}"
+                                  required="#{bindings.EmployeeName.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.EmployeeName.hints.displayWidth}"
+                                  maximumLength="#{bindings.EmployeeName.hints.precision}"
+                                  shortDesc="#{bindings.EmployeeName.hints.tooltip}" id="it3">
+                        <f:validator binding="#{bindings.EmployeeName.validator}"/>
+                    </af:inputText>
+                    <f:facet name="footer">
+                        <af:button text="Back" id="b1" action="back"/>
+                    </f:facet>
+                </af:panelFormLayout>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>
